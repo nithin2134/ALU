@@ -1,5 +1,7 @@
 # ALU
+
 ![image](https://github.com/RESMIRNAIR/ALU/assets/154305926/33dff162-59b3-44e2-886a-1ddd6e60979f)
+
 # ALU Arithmetic and Logic Operations
 ----------------------------------------------------------------------
 |ALU_Sel|   ALU Operation
@@ -37,16 +39,16 @@
 | 1111  |   ALU_Out = 1 if A=B else 0;
 -
 # VERILOG PROGRAM:
-
+~~~
 module alu(
 
-       input [7:0] A,B,  // ALU 8-bit Inputs                 
+       input [7:0] A,B,                 
        
-       input [3:0] ALU_Sel,// ALU Selection
+       input [3:0] ALU_Sel,
        
-       output [7:0] ALU_Out, // ALU 8-bit Output
+       output [7:0] ALU_Out, 
        
-       output CarryOut // Carry Out Flag
+       output CarryOut
 
 );
 
@@ -54,11 +56,11 @@ reg [7:0] ALU_Result;
 
 wire [8:0] tmp;
 
-assign ALU_Out = ALU_Result; // ALU out
+assign ALU_Out = ALU_Result;
 
 assign tmp = {1'b0,A} + {1'b0,B};
 
-assign CarryOut = tmp[8]; // Carryout flag
+assign CarryOut = tmp[8]; 
 
 always @(*)
 
@@ -137,7 +139,7 @@ begin
 end
 
 endmodule
-
+~~~
 # OUTPUT:
 
 ![image](https://github.com/nithin2134/ALU/assets/160302970/6012014e-81e3-4a2c-83c0-ebb7538b9831)
